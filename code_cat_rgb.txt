@@ -1,0 +1,47 @@
+    RGBColor blue(102, 205, 255);
+    RGBColor green(0, 153, 0);
+    RGBColor white(255, 255, 255);
+    RGBColor yellow(255, 255, 0);
+    RGBColor brown(102, 51, 0);
+    RGBColor black(0, 0, 0);
+    RGBColor dark_brown(51, 0, 0);
+    RGBColor dark_yellow(204, 102, 0);
+    RGBColor another_blue(102, 163, 255);
+    RGBColor pink(255, 200, 200);
+    BWColor gray = BWColor(dark_yellow.getBWColor());    
+
+    //-------------//
+    // COLORED CAT //
+    //-------------//
+
+    RGBMatrix rgb(400, 400, 0);
+
+    Rectangle bg({0, 0}, 500, 500, blue); // figure is out of matrix bounds
+    Circle head({200, 200}, 150, gray); // passing BWColor to RGB Matrix
+    Triangle outer_ear1({200, 100}, {350, 25}, {350, 200}, gray);
+    Triangle outer_ear2({200, 100}, {50, 25}, {50, 200}, gray);
+    Triangle inner_ear1({250, 100}, {325, 65}, {325, 150}, white);
+    Triangle inner_ear2({150, 100}, {75, 65}, {75, 150}, white);
+    Circle left_eye({150, 200}, 35, green);
+    Circle right_eye({250, 200}, 35, green);
+    Rectangle left_pupil({140, 170}, 20, 60, black);
+    Rectangle right_pupil({240, 170}, 20, 60, black);
+    Triangle nose({200, 260}, {190, 250}, {210, 250}, pink);
+    Circle left_highlight({150, 190}, 5, white);
+    Circle right_highlight({250, 190}, 5, white);
+
+    rgb.draw(bg);
+    rgb.draw(head);
+    rgb.draw(outer_ear1);
+    rgb.draw(outer_ear2);
+    rgb.draw(inner_ear1);
+    rgb.draw(inner_ear2);
+    rgb.draw(left_eye);
+    rgb.draw(right_eye);
+    rgb.draw(left_pupil);
+    rgb.draw(right_pupil);
+    rgb.draw(nose);
+    rgb.draw(left_highlight);
+    rgb.draw(right_highlight);
+
+    rgb.display();

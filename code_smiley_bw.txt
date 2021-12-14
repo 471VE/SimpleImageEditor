@@ -1,0 +1,37 @@
+    RGBColor blue(102, 205, 255);
+    RGBColor green(0, 153, 0);
+    RGBColor white(255, 255, 255);
+    RGBColor yellow(255, 255, 0);
+    RGBColor brown(102, 51, 0);
+    RGBColor black(0, 0, 0);
+    RGBColor dark_yellow(204, 102, 0);
+    RGBColor pink(255, 200, 200);
+    BWColor gray = BWColor(dark_yellow.getBWColor());
+
+    //------------------//
+    // GRAYSCALE SMILEY //
+    //------------------//
+
+    BWMatrix bw(400, 400, 0);
+
+    Triangle background({-400, 400}, {200, -200}, {800, 400}, gray); // figure out of bounds
+    Circle face({200, 200}, 150, yellow); // passing RGB Color to BW Matrix
+    Circle lower_lip({200, 200}, 100, black);
+    Circle upper_lip({200, 200}, 90, yellow);
+    Rectangle hide_unnecessary_lines({100, 100}, 200, 150, yellow);
+    Circle left_eye_smiley({150, 150}, 25, black);
+    Circle right_eye_smiley({250, 150}, 25, black);
+    Circle left_eye_pupil_smiley({160, 140}, 5, white);
+    Circle right_eye_pupil_smiley({260, 140}, 5, white);
+
+    bw.draw(background);
+    bw.draw(face);
+    bw.draw(lower_lip);
+    bw.draw(upper_lip);
+    bw.draw(hide_unnecessary_lines);
+    bw.draw(left_eye_smiley);
+    bw.draw(right_eye_smiley);
+    bw.draw(left_eye_pupil_smiley);
+    bw.draw(right_eye_pupil_smiley);
+
+    bw.display();    
